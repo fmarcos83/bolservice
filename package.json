@@ -1,0 +1,19 @@
+{
+  "name": "miniservice",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "pdfkit": "~0.7.2",
+    "body-parser": "~1.14.2",
+    "express": "~4.13.3",
+    "mongoose": "~4.3.4",
+    "express-jwt": "~3.3.0",
+    "jsonwebtoken": "~5.5.0"
+  }
+}

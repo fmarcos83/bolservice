@@ -1,0 +1,57 @@
+{
+	"id": "d165b421-a5c9-63ec-a504-1b355c2caa64",
+	"name": "coders_clan",
+	"description": "",
+	"order": [
+		"a853348a-7d9b-690e-1a92-73a34959fa0e",
+		"6369aa6e-6a9d-ec59-0192-d9c29dca44b4"
+	],
+	"folders": [],
+	"timestamp": 1451842899562,
+	"owner": "",
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "6369aa6e-6a9d-ec59-0192-d9c29dca44b4",
+			"headers": "Content-Type: application/json\nAuthorization: Bearer:eyJhbGciOiJIUzI1NiJ9.cGRmX2Rvd25sb2Fk.f8ca_ucrJDH85lxS_P1-kKmy41lsE3GNj9AAZ53OVOI\n",
+			"url": "localhost:8080/api/document",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "POST",
+			"collectionId": "d165b421-a5c9-63ec-a504-1b355c2caa64",
+			"data": [],
+			"dataMode": "raw",
+			"name": "localhost:8080/api/document",
+			"description": "blind request",
+			"descriptionFormat": "html",
+			"time": 1451948066717,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"rawModeData": "{\n  \"blind\":true,\n  \"shipfrom\": {\n    \"name\": \"Material Difference 2\",\n    \"address\": \"3665 Markwood Court\",\n    \"city\": \"Oxford\",\n    \"state\": \"MI\",\n    \"zip\": \"48370\"\n  },\n  \"shipto\": {\n    \"name\": \"Port Erie Plastics\",\n    \"address\": \"900 Troupe Road\",\n    \"city\": \"Harbor Creek\",\n    \"state\": \"PA\",\n    \"zip\": \"16421\"\n  },\n  \"shiptocontact\": {\n    \"firstname\": \"John\",\n    \"lastname\": \"Doe\",\n    \"phone\": \"888-123-4567\",\n    \"email\": \"johndoe@gmail.com\"\n  },\n  \"bolNumber\": \"MD2348.1\",\n  \"mdtpo\": \"MD2348\",\n  \"carriername\": \"JB Hunt\",\n  \"pickupnumber\": \"15-0005\",\n  \"customerpo\": \"998788d877\",\n  \"material\": {\n    \"id\": \"MDT-6.91321.10-15.117\",\n    \"description\": \"PS GPPS WIDE MELT\"\n  }\n}"
+		},
+		{
+			"id": "a853348a-7d9b-690e-1a92-73a34959fa0e",
+			"headers": "Content-Type: application/json\nAuthorization: Bearer:eyJhbGciOiJIUzI1NiJ9.cGRmX2Rvd25sb2Fk.f8ca_ucrJDH85lxS_P1-kKmy41lsE3GNj9AAZ53OVOI\n",
+			"url": "localhost:8080/api/document",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1451948077897,
+			"name": "localhost:8080/api/document",
+			"description": "pdf microservice",
+			"collectionId": "d165b421-a5c9-63ec-a504-1b355c2caa64",
+			"responses": [],
+			"rawModeData": "{\n  \"shipfrom\": {\n    \"name\": \"Material Difference 2\",\n    \"address\": \"3665 Markwood Court\",\n    \"city\": \"Oxford\",\n    \"state\": \"MI\",\n    \"zip\": \"48370\"\n  },\n  \"shipto\": {\n    \"name\": \"Port Erie Plastics\",\n    \"address\": \"900 Troupe Road\",\n    \"city\": \"Harbor Creek\",\n    \"state\": \"PA\",\n    \"zip\": \"16421\"\n  },\n  \"shiptocontact\": {\n    \"firstname\": \"John\",\n    \"lastname\": \"Doe\",\n    \"phone\": \"888-123-4567\",\n    \"email\": \"johndoe@gmail.com\"\n  },\n  \"bolNumber\": \"MD2348.1\",\n  \"mdtpo\": \"MD2348\",\n  \"carriername\": \"JB Hunt\",\n  \"pickupnumber\": \"15-0005\",\n  \"customerpo\": \"998788d877\",\n  \"material\": {\n    \"id\": \"MDT-6.91321.10-15.117\",\n    \"description\": \"PS GPPS WIDE MELT\"\n  }\n}"
+		}
+	]
+}

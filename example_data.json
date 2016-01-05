@@ -1,0 +1,31 @@
+{
+  "shipfrom": {
+    "name": "Material Difference Technologies",
+    "address": "3665 Markwood Court",
+    "city": "Oxford",
+    "state": "MI",
+    "zip": "48370"
+  },
+  "shipto": {
+    "name": "Port Erie Plastics",
+    "address": "900 Troupe Road",
+    "city": "Harbor Creek",
+    "state": "PA",
+    "zip": "16421"
+  },
+  "shiptocontact": {
+    "firstname": "John",
+    "lastname": "Doe",
+    "phone": "888-123-4567",
+    "email": "johndoe@gmail.com"
+  },
+  "bolNumber": "MD2348.1",
+  "mdtpo": "MD2348",
+  "carriername": "JB Hunt",
+  "pickupnumber": "15-0005",
+  "customerpo": "998788d877",
+  "material": {
+    "id": "MDT-6.91321.10-15.117",
+    "description": "PS GPPS WIDE MELT"
+  }
+}
