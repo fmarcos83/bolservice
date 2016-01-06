@@ -1,4 +1,5 @@
 PDFDocument = require 'pdfkit'
+base64 = require 'base64-stream'
 middleware = (data, res) ->
   if data.blind
     data.shiptocontact = undefined
@@ -24,7 +25,11 @@ middleware = (data, res) ->
   doc = new PDFDocument options
   doc.font './fonts/Roboto-Thin.ttf'
   res.contentType('application/pdf')
-  doc.pipe res
+  if data.download
+    doc.pipe(base64.encode())
+       .pipe res
+  else
+    doc.pipe res
   fontSize = 12
   doc.fontSize fontSize
   doc.fillColor "black"

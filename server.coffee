@@ -1,7 +1,9 @@
 express = require 'express'
 jwt = require 'express-jwt'
+cors = require 'cors'
 UnauthorizedError = require 'express-jwt/lib/errors/UnauthorizedError'
 app = express()
+app.use(cors())
 bodyParser = require 'body-parser'
 
 app.use bodyParser.urlencoded extended: true
@@ -13,8 +15,11 @@ port = process.env.PORT || 8080
 router = express.Router();
 
 router.route('/document')
-      .post (req, res)->
+      .post (req, res,next)->
+        filename = "not_blind"
+        filename="blind" if req.body.blind
         pdf req.body, res
+        res.attachment("#{filename}.pdf") if req.body.download
 
 jwtConfig =
   secret:'secret_key'
