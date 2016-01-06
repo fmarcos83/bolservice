@@ -6,6 +6,7 @@ app = express()
 app.use(cors())
 bodyParser = require 'body-parser'
 
+app.use('/example', express.static('example'))
 app.use bodyParser.urlencoded extended: true
 app.use bodyParser.json()
 pdf = require './pdf_stream'

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Index</title>
+        <script src="https://anothercdn.googlecode.com/files/base64.js" type="text/javascript" charset="utf-8"></script>
+        <script src="./angular.min.js" type="text/javascript" charset="utf-8"></script>
+        <script>
+            var variable = {
+              "shipfrom": {
+                "name": "Material Difference 2",
+                "address": "3665 Markwood Court",
+                "city": "Oxford",
+                "state": "MI",
+                "zip": "48370"
+              },
+              "shipto": {
+                "name": "Port Erie Plastics",
+                "address": "900 Troupe Road",
+                "city": "Harbor Creek",
+                "state": "PA",
+                "zip": "16421"
+              },
+              "shiptocontact": {
+                "firstname": "John",
+                "lastname": "Doe",
+                "phone": "888-123-4567",
+                "email": "johndoe@gmail.com"
+              },
+              "bolNumber": "MD2348.1",
+              "mdtpo": "MD2348",
+              "carriername": "JB Hunt",
+              "pickupnumber": "15-0005",
+              "customerpo": "998788d877",
+              "material": {
+                "id": "MDT-6.91321.10-15.117",
+                "description": "PS GPPS WIDE MELT"
+              }
+            };
+            var url = 'https://polar-crag-5511.herokuapp.com/api/document';
+            var module = angular.module('mainApp',[]);
+            module.controller('mainController',['$scope','$http',function($scope,$http){
+                    $scope.fetchPdf = function(blind, download){
+                        requestBlind = false || blind
+                        variable.blind = requestBlind
+                        variable.download = false || download
+                        var linkDom = document.getElementById('downloadLink')
+                        var res = $http.post(url,variable,{headers:{
+                                'Authorization':'Bearer:eyJhbGciOiJIUzI1NiJ9.cGRmX2Rvd25sb2Fk.f8ca_ucrJDH85lxS_P1-kKmy41lsE3GNj9AAZ53OVOI'
+                            }});
+                        res.then(function(response){
+                            var anchor = angular.element(linkDom).attr({
+                                href: 'data:application/pdf;base64,'+(response.data),
+                                download:'file.pdf'
+                            })[0].click();
+                        })
+                    }
+            }])
+        </script>
+    </head>
+    <body ng-app="mainApp">
+        <div ng-controller="mainController">
+            <button ng-click="fetchPdf(false,false)">fetch PDF</button>
+            <button ng-click="fetchPdf(true,false)">fetch PDF blind</button>
+            <button ng-click="fetchPdf(false,true)">download PDF</button>
+            <button ng-click="fetchPdf(true,true)">download PDF blind</button>
+            <p/>
+            <a id="downloadLink" href="" style="visibility:hidden;"></a>
+        </div>
+    </body>
+</html>
