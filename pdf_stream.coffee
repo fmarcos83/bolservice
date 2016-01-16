@@ -206,7 +206,8 @@ middleware = (data, res) ->
       #CUSTOMER INFO COLUMN
       drawText "CUSTOMER ORDER NUMBER", margin, 277, 180
       drawText "MDT PO # #{data.mdtpo ? ''}", margin, 298, 180
-      drawText "PICK UP # #{data.pickupnumber ? ''}", margin, 328, 180
+      if data.pickupnumber
+        drawText "PICK UP # #{data.pickupnumber ? ''}", margin, 328, 180
       drawText "GRAND TOTAL", margin+4, 402, 180, undefined, "left"
       #PKGS COLUMN
       drawText "# PKGS", 180,277,52.5
