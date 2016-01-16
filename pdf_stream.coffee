@@ -120,7 +120,8 @@ middleware = (data, res) ->
 
   shipInfoRightInfo = ->
     drawLabelInput "Bill of Lading Number", "#{data.bolNumber ? ''}", 322, 42
-    drawLabelInput "CARRIER NAME", "#{data.carriername ? ''}", 322, 100
+    if data.carriername
+      drawLabelInput "CARRIER NAME", "#{data.carriername ? ''}", 322, 100
     drawLabelInput "Pro number", "", 322, 140
     drawLabelInput "Freight Charge Terms", "", 322, 205
     doc.fillColor 'black'
